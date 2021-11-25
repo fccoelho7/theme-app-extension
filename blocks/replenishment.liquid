@@ -1,0 +1,32 @@
+<div id="rcsms-replenishment" style="background-color: {{ block.settings.color }}; padding: 1em;">
+  <h3>Replenishment App Block</h3>
+  <p>
+    <label>{{ block.settings.label }}</label>
+    <br/>
+    <input type="tel" />
+  </p>
+  <p>
+    <label>
+      <input type="checkbox" /> 
+      <strong>I wanna get 10% off my next purchase!</strong>
+    </label>
+  </p>
+</div>
+
+<script>
+  window.currentProductVariantId = {{ product.selected_or_first_available_variant.id }};
+</script>
+
+{% schema %}
+  {
+    "name": "Replenishment Opt-In",
+    "target": "section",
+    "stylesheet": "app.css",
+    "javascript": "replenishment.js",
+    "settings": [
+      { "label": "Label", "id": "label", "type": "text", "default": "What's your phone number?" },
+      { "label": "Color", "id": "color", "type": "color", "default": "#cccccc" },
+      { "type": "product", "id": "product", "label": "Product", "autofill": true }
+    ]
+  }
+{% endschema %}

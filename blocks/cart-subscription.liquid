@@ -1,0 +1,18 @@
+<div id="rcsms-subscription" style="display: none;">
+  <label>
+    <input name="rcsms-subscription-opt-in" type="checkbox" checked="checked" /> 
+    {{ block.settings.label }}
+  </label>
+</div>
+
+{% schema %}
+  {
+    "name": "Cart Subscription Opt-In",
+    "target": "section",
+    "stylesheet": "app.css",
+    "javascript": "cart-subscription.js",
+    "settings": [
+      { "label": "Label", "id": "label", "type": "text", "default": "Allow me to modify my subscription via SMS" }
+    ]
+  }
+{% endschema %}
