@@ -1,0 +1,19 @@
+<div id="rcsms-replenishment-product-widget" style="margin-top: 2rem;"></div>
+
+<script>
+  window.currentVariant = {{ product.selected_or_first_available_variant }};
+</script>
+
+{% schema %}
+  {
+    "name": "Replenishment Opt-In 2",
+    "target": "section",
+    "stylesheet": "app.css",
+    "javascript": "replenishment-new.js",
+    "settings": [
+      { "label": "Label", "id": "label", "type": "text", "default": "What's your phone number?" },
+      { "label": "Color", "id": "color", "type": "color", "default": "#cccccc" },
+      { "type": "product", "id": "product", "label": "Product", "autofill": true }
+    ]
+  }
+{% endschema %}
